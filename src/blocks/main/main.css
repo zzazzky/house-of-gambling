@@ -1,0 +1,19 @@
+.main {
+  width: 100%;
+  max-width: 1648px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  position: relative;
+  justify-content: space-between;
+  padding: 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .main {
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
+}

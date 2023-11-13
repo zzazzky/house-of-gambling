@@ -1,0 +1,159 @@
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0.8;
+  z-index: -2;
+  height: 1028px;
+  position: relative;
+}
+
+.icons__line {
+  margin: 0 8px 0 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.icons__line_downwards {
+  align-self: flex-end;
+}
+
+.icons__line-part {
+  display: flex;
+  flex-direction: column;
+}
+
+.icons__line-part_moving_upwards {
+  animation: move 5s linear infinite;
+}
+
+.icons__line-part_moving_downwards {
+  animation: moveReverse 5s linear infinite;
+}
+
+.icons__line-part_moving_slow {
+  animation: move 10s linear infinite;
+}
+
+.icons__line:first-of-type {
+  opacity: 0.4;
+}
+
+.icons__line:last-of-type {
+  opacity: 0.6;
+}
+
+.icons__icon {
+  margin: 12px 0 12px 0;
+  width: 99px;
+  box-sizing: border-box;
+}
+
+.icons__icon_horisontal {
+  display: none;
+}
+
+@media screen and (max-width: 1575px) {
+  .icons__icon {
+    width: 69px;
+  }
+
+  .icons {
+    height: 916px;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .icons__icon {
+    width: 49px;
+    margin: 6px 0 6px 0;
+  }
+
+  .icons {
+    height: 540px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .icons {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .icons__line {
+    flex-direction: row-reverse;
+    max-width: 536px;
+    overflow: hidden;
+  }
+
+  .icons__line_downwards {
+    flex-direction: row;
+  }
+
+  .icons__line-part {
+    flex-direction: row-reverse;
+  }
+
+  .icons__icon {
+    height: 49px;
+    margin: 4px 5px;
+  }
+
+  .icons__icon_big {
+    display: none;
+  }
+
+  .icons__icon_horisontal {
+    display: block;
+    width: auto;
+  }
+
+  .icons__line-part_moving_upwards {
+    animation: move-horisontal 5s linear infinite;
+  }
+
+  .icons__line-part_moving_downwards {
+    animation: moveReverse-horisontal 5s linear infinite;
+  }
+
+  .icons__line-part_moving_slow {
+    animation: move-horisontal 10s linear infinite;
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes moveReverse {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes move-horisontal {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes moveReverse-horisontal {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
